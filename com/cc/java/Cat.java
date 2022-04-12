@@ -12,6 +12,9 @@ public class Cat {
         this.age = age;
     }
 
+    private boolean isFemale;{
+    }
+
     // Schnittstelle
     public String getStringAttributes(String flag) {
      switch (flag) {
@@ -26,8 +29,24 @@ public class Cat {
     }
 
     
-    public int getAge() {
-        return age;
+    
+    public String getAge() {
+        return checkCompliance();
+    }
+
+    private String checkCompliance() {
+        if (isFemale) {
+            // nicht OK !
+            return CheckEscalationLevel() ; 
+        } else {
+            // OK!
+            return Integer.toString(age);  
+        }
+       
+    }
+
+    private String CheckEscalationLevel() {
+        return "This is an inappropriate question";
     }
 
 }
